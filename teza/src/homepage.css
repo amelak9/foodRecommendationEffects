@@ -5,9 +5,14 @@
 .homepage-container {
     padding: 20px;
     background: whitesmoke;
-    border: 1px solid cadetblue;
+    border: 1px solid cornflowerblue;
 }
 
 .homepage-container__object {
   margin-bottom: 10px;
+}
+
+.homepage-container__button {
+    background: cornflowerblue;
+    border-radius: 5px;
 }

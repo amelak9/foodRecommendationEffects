@@ -16,10 +16,12 @@ const Homepage = () => {
             Ethnicity: <input type="text"/>
             </div>
             <div className="homepage-container__object">
-                Healthy food preference: <input type="checkbox"/>
-             <input type="checkbox"/>
-                <input type="checkbox"/>
+                Healthy food preference:<br/>
+                I don't prefer healthy food <input type="checkbox"/><br/>
+             I like to eat healthy sometimes <input type="checkbox"/><br/>
+             I eat mostly healthy food <input type="checkbox"/>
             </div>
+            <button type="submit" className="homepage-container__button">Next</button>
         </div>
       </div>
   );
