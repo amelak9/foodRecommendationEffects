@@ -1,0 +1,13 @@
+.homepage {
+ padding: 200px 600px;
+}
+
+.homepage-container {
+    padding: 20px;
+    background: whitesmoke;
+    border: 1px solid cadetblue;
+}
+
+.homepage-container__object {
+  margin-bottom: 10px;
+}
