@@ -1,0 +1,38 @@
+.homepage {
+ padding: 200px 600px;
+}
+
+.homepage-container {
+    padding: 16px;
+    background: whitesmoke;
+    border: 1px solid cornflowerblue;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.homepage-container__object {
+  margin-bottom: 16px;
+}
+
+.homepage-container__button {
+    background: cornflowerblue;
+    border-radius: 5px;
+    margin-top: 16px;
+    font-size: 18px;
+    padding: 4px;
+    border: 1px solid cornflowerblue;
+}
+
+.homepage-container__label {
+    font-weight: bold;
+    font-size: 16px;
+    margin-bottom: 8px;
+}
+
+.homepage-container__input {
+    height: 32px;
+    border-radius: 5px;
+    width: 80%;
+    border: 1px solid cornflowerblue;
+}
+
