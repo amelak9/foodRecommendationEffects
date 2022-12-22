@@ -1,5 +1,6 @@
 .homepage {
  padding: 200px 600px;
+ min-width: 700px;
 }
 
 .homepage-container {
@@ -17,9 +18,9 @@
 .homepage-container__button {
     background: cornflowerblue;
     border-radius: 5px;
-    margin-top: 16px;
+    margin-top: 32px;
     font-size: 18px;
-    padding: 4px;
+    padding: 8px;
     border: 1px solid cornflowerblue;
 }
 

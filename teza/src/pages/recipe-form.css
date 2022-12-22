@@ -2,8 +2,8 @@
     margin: 0 auto;
     padding: 16px 50px;
     border-radius: 5px;
-    width: 600px;
     text-align: center;
+    max-width: 1200px;
     border: 1px solid cornflowerblue;
     background: whitesmoke;
 }
@@ -20,23 +20,35 @@
 
 .recipe-form__container {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
     padding: 16px;
 }
 
 .recipe-form__recipe {
-    padding: 8px;
     background: white;
-    width: 250px;
     border-radius: 5px;
     border: 1px solid cornflowerblue;
+    height: 200px;
+    margin-bottom: 12px;
 }
 
 .recipe-form__button {
     background: cornflowerblue;
     border-radius: 5px;
-    margin-top: 16px;
+    margin-top: 32px;
     font-size: 18px;
-    padding: 4px;
+    padding: 8px;
     border: 1px solid cornflowerblue;
+}
+
+.recipe-form__recipe-container {
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.recipe-form__recipe-explanation {
+  background: lightgrey;
+    border: 1px solid cornflowerblue;
+    border-radius: 15px;
 }

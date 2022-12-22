@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang=”en”>
+<head>
+    <meta charset=”utf-8">
+    <link rel="stylesheet" type="text/css" href="homepage.css">
+    <title>Choose Your recipe</title>
+</head>
+<body>
+      <div class="homepage">
+        <div class="homepage-container">
+            <div class="homepage-container__object">
+                <p class="homepage-container__label">Age:</p>
+                <input type="number" class="homepage-container__input"/>
+            </div>
+            <div class="homepage-container__object">
+                <p class="homepage-container__label">Sex:</p>
+                Male <input type="radio"/> Female <input type="radio"/>
+            </div>
+            <div class="homepage-container__object">
+             <p class="homepage-container__label">Healthy food preference:</p>
+                I don't prefer healthy food <input type="radio"/><br/>
+             I like to eat healthy sometimes <input type="radio"/><br/>
+             I eat mostly healthy food <input type="radio"/>
+            </div>
+            <button type="button" onclick="handleClick()" class="homepage-container__button">Next</button>
+        </div>
+      </div>
+</body>
+<script>
+    function handleClick() {
+        window.location.href="/" + Math.floor(Math.random() * 8);
+    }
+</script>
+</html>
