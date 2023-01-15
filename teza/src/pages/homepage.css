@@ -1,14 +1,11 @@
-.homepage {
- padding: 200px 600px;
- min-width: 700px;
-}
-
 .homepage-container {
     padding: 16px;
     background: whitesmoke;
     border: 1px solid cornflowerblue;
     text-align: center;
     border-radius: 5px;
+    width: 600px;
+    margin: 100px auto;
 }
 
 .homepage-container__object {
@@ -28,12 +25,13 @@
     font-weight: bold;
     font-size: 16px;
     margin-bottom: 8px;
+    margin-right: 8px;
 }
 
 .homepage-container__input {
     height: 32px;
     border-radius: 5px;
-    width: 80%;
+    width: 20%;
     border: 1px solid cornflowerblue;
 }
 

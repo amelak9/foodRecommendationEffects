@@ -4,9 +4,28 @@ import bodyParser from 'body-parser';
 import path from 'path';
 const __dirname = path.resolve();
 const app = express();
+import mysql from "mysql";
+
+var con=mysql.createConnection({
+    host: "127.0.0.1",
+    user: "root",
+    password: "password",
+    port: "3306",
+    database: "recipes"
+});
+
+con.connect(function(err) {
+    if (err) throw err
+    console.log("Connected!");
+});
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/pages/'));
+app.use(
+    express.urlencoded({
+        extended: true,
+    })
+)
 
 app.get('/',function(req,res) { res.sendFile(__dirname + '/pages/homepage.html'); });
 app.get('/0',function(req,res) { res.sendFile(__dirname + '/pages/NoEffect.html'); });
@@ -17,50 +36,60 @@ app.get('/4',function(req,res) { res.sendFile(__dirname + '/pages/DecoyPositionE
 app.get('/5',function(req,res) { res.sendFile(__dirname + '/pages/DecoyPositionExplanation.html'); });
 app.get('/6',function(req,res) { res.sendFile(__dirname + '/pages/ExplanationDecoyEffect.html'); });
 app.get('/7',function(req,res) { res.sendFile(__dirname + '/pages/ExplanationPositionEffect.html'); });
+app.get('/8',function(req,res) { res.sendFile(__dirname + '/pages/Finished.html'); });
 
-app.post('/add_result',(req,res)=>{
+app.post('/add_result',(req,res)=> {
 
     const request = req.body;
-    let recipe1 = request.recipe1;
-    let recipe2 = request.recipe2;
-    let recipe3 = request.recipe3;
-    let recipe4 = request.recipe4;
-    let recipe5 = request.recipe5;
-    let recipe6 = request.recipe6;
-    /*if(recipe1 == null) return res.status(400).json('Recipe cant be blank');
-    if(recipe2 == null) return res.status(400).json('Recipe cant be blank');
-    if(recipe3 == null) return res.status(400).json('Recipe cant be blank');
-    if(recipe4 == null) return res.status(400).json('Recipe cant be blank');
-    if(recipe5 == null) return res.status(400).json('Recipe cant be blank');
-    if(recipe6 == null) return res.status(400).json('Recipe cant be blank');*/
+    const data = {
+        user_id: request.user_id,
+        group_id: request.group_id,
+        recipe_1: request.recipe1,
+        recipe_2: request.recipe2,
+        recipe_3: request.recipe3,
+        recipe_4: request.recipe4,
+        recipe_5: request.recipe5,
+        recipe_6: request.recipe6
+    }
 
-    const user_id = Math.random()
-    for (let i = 1; i < 7; i++) {
-        const data = {
-            recipe_num: i,
-            result_val: req.body[i - 1],
-            user_id: user_id
-        };
+
         con.query("INSERT INTO results set ? ",data,
-            function(err, rows)
+            function(err)
             {
 
-                if (err){
-                    //If error
-                    res.status(400).json('Sorry!!Unable To Add');
-                    console.log("Error inserting : %s ",err );
+                if (err) {
+                    console.log("Error inserting : %s ",err);
                 }
-                else
-                    //If success
-                    res.status(200).json('Result Added Successfully!!')
-
+                else {
+                    res.status(200).redirect("/8");
+                    console.log("Result Added Successfully!!");
+                }
             });
-    }
 });
 
+app.post('/add_user',(req,res)=> {
 
-app.listen(3306, ()=> {
+    const request = req.body;
+    const data = {
+        user_id: request.user_id,
+        age: request.age,
+        sex: request.sex,
+        healthy_food_preference: request.healthy_food_preference
+    }
+    con.query("INSERT INTO users set ? ",data,
+        function(err)
+        {
+            if (err) {
+                res.status(400).json('Sorry!!Unable To Add');
+                console.log("Error inserting : %s ",err );
+            }
+            else {
+                res.status(200).redirect("/" + Math.floor(Math.random() * 8) + "?user_id=" + data.user_id)
+                console.log("User Added Successfully!!");
+            }
+        });
+});
+
+app.listen(8080, ()=> {
     console.log(`app is running on port 8080`);
 });
-
-

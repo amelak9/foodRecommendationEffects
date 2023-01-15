@@ -6,7 +6,10 @@
     <link rel="stylesheet" type="text/css" href="recipes.css">
     <title>Choose Your recipe</title>
 </head>
-<body>
+<body onload="onLoad()">
+<form action="/add_result" method="POST">
+    <input type="hidden" name="group_id" value="4-decoy-position"/>
+    <input type="hidden" name="user_id" value=""/>
         <div class="recipe-form__Layout">
             <p class="recipe-form__label">Choose one of the recipes in each row: </p>
             <div class="recipe-form__container">
@@ -15,18 +18,21 @@
                     <div class="recipe-form__recipe">
                         <div class="classic-macaroni-salad"></div>
                     </div>
+                    <input type="radio" name="recipe1" value="healthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Creamy Macaroni and Cheese</p>
                     <div class="recipe-form__recipe">
                         <div class="mac-salad-hawaii"></div>
                     </div>
+                    <input type="radio" name="recipe1" value="decoy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Fried Mac and Cheese Balls</p>
                     <div class="recipe-form__recipe">
                         <div class="fried-mac-cheese-balls"></div>
                     </div>
+                    <input type="radio" name="recipe1" value="unhealthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -35,18 +41,44 @@
                     <div class="recipe-form__recipe">
                         <div class="veggie-burgers"></div>
                     </div>
+                    <input type="radio" name="recipe2" value="healthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">The Perfect Basic Burger</p>
                     <div class="recipe-form__recipe">
                         <div class="butter-burger"></div>
                     </div>
+                    <input type="radio" name="recipe2" value="decoy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Cheeseburger Quesadilla</p>
                     <div class="recipe-form__recipe">
                         <div class="cheeseburger-quesadilla"></div>
                     </div>
+                    <input type="radio" name="recipe2" value="unhealthy"/>
+                </div>
+            </div>
+            <div class="recipe-form__container">
+                <div class="recipe-form__recipe-container">
+                    <p class="recipe-form__recipe-title">No-Mayo Chicken Salad</p>
+                    <div class="recipe-form__recipe">
+                        <div class="chicken-salad"></div>
+                    </div>
+                    <input type="radio" name="recipe3" value="healthy"/>
+                </div>
+                <div class="recipe-form__recipe-container">
+                    <p class="recipe-form__recipe-title">Cold Chicken Macaroni Salad</p>
+                    <div class="recipe-form__recipe">
+                        <div class="cold-salad"></div>
+                    </div>
+                    <input type="radio" name="recipe3" value="decoy"/>
+                </div>
+                <div class="recipe-form__recipe-container">
+                    <p class="recipe-form__recipe-title">Baked Buffalo Chicken Mac and Cheese</p>
+                    <div class="recipe-form__recipe">
+                        <div class="baked-buffalo"></div>
+                    </div>
+                    <input type="radio" name="recipe3" value="unhealthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -55,18 +87,21 @@
                     <div class="recipe-form__recipe">
                         <div class="cinnamon-apples"></div>
                     </div>
+                    <input type="radio" name="recipe4" value="healthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Apple Squares</p>
                     <div class="recipe-form__recipe">
                         <div class="baked-apples"></div>
                     </div>
+                    <input type="radio" name="recipe4" value="decoy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Baked Apple Cider Donuts</p>
                     <div class="recipe-form__recipe">
                         <div class="apple-donuts"></div>
                     </div>
+                    <input type="radio" name="recipe4" value="unhealthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -75,18 +110,21 @@
                     <div class="recipe-form__recipe">
                         <div class="air-fryer-sticks"></div>
                     </div>
+                    <input type="radio" name="recipe5" value="healthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Fluffy French Toast</p>
                     <div class="recipe-form__recipe">
                         <div class="air-fryer-toast"></div>
                     </div>
+                    <input type="radio" name="recipe5" value="decoy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">French Toast</p>
                     <div class="recipe-form__recipe">
                         <div class="baked-french-toast"></div>
                     </div>
+                    <input type="radio" name="recipe5" value="unhealthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -95,22 +133,33 @@
                     <div class="recipe-form__recipe">
                         <div class="banana-cookie"></div>
                     </div>
+                    <input type="radio" name="recipe6" value="healthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Crisp Oatmeal Cookies</p>
                     <div class="recipe-form__recipe">
                         <div class="crisp-oatmeal-cookies"></div>
                     </div>
+                    <input type="radio" name="recipe6" value="decoy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Apple Cinnamon Oatmeal</p>
                     <div class="recipe-form__recipe">
                         <div class="chocolate-cookie"></div>
                     </div>
+                    <input type="radio" name="recipe6" value="unhealthy"/>
                 </div>
             </div>
             <button class="recipe-form__button" type="submit">Done</button>
         </div>
+</form>
 </body>
+<script>
+    function onLoad() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        document.getElementsByName("user_id")[0].value = urlParams.get('user_id')
+    }
+</script>
 </html>
 

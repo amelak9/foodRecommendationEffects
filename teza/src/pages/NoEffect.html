@@ -6,9 +6,11 @@
     <link rel="stylesheet" type="text/css" href="recipes.css">
     <title>Choose Your recipe</title>
 </head>
-<body>
+<body onload="onLoad()">
 <form action="/add_result" method="POST">
-        <div class="recipe-form__Layout">
+        <input type="hidden" name="group_id" value="0-no_effect"/>
+        <input type="hidden" name="user_id" value=""/>
+    <div class="recipe-form__Layout">
             <p class="recipe-form__label">Choose one of the recipes in each row: </p>
             <div class="recipe-form__container">
                 <div class="recipe-form__recipe-container">
@@ -110,5 +112,12 @@
         </div>
 </form>
 </body>
+<script>
+    function onLoad() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        document.getElementsByName("user_id")[0].value = urlParams.get('user_id')
+    }
+</script>
 </html>
 

@@ -5,30 +5,49 @@
     <link rel="stylesheet" type="text/css" href="homepage.css">
     <title>Choose Your recipe</title>
 </head>
-<body>
-      <div class="homepage">
+<body onload="onLoad()">
+<form action="/add_user" id="user_form" method="POST">
+    <input type="hidden" name="user_id" value="function () => Date.now().toString()"/>
+    <div>
         <div class="homepage-container">
             <div class="homepage-container__object">
-                <p class="homepage-container__label">Age:</p>
-                <input type="number" class="homepage-container__input"/>
+                <label class="homepage-container__label">Age:
+                </label>
+                <input type="number" name="age" class="homepage-container__input"/>
             </div>
             <div class="homepage-container__object">
-                <p class="homepage-container__label">Sex:</p>
-                Male <input type="radio"/> Female <input type="radio"/>
+                <label class="homepage-container__label">Sex:
+                </label>
+                <label> Male
+                <input type="radio" name="sex" value="male"/>
+                </label>
+                <label>Female
+                <input type="radio" name="sex" value="female"/>
+                </label>
             </div>
             <div class="homepage-container__object">
              <p class="homepage-container__label">Healthy food preference:</p>
-                I don't prefer healthy food <input type="radio"/><br/>
-             I like to eat healthy sometimes <input type="radio"/><br/>
-             I eat mostly healthy food <input type="radio"/>
+                 <label> I don't prefer healthy food
+                <input name="healthy_food_preference" value="doesnt_prefer" type="radio"/>
+            </label>
+                <br/>
+              <label> I like to eat healthy sometimes
+                <input name="healthy_food_preference" value="prefers_sometimes" type="radio"/>
+            </label>
+                <br/>
+             <label> I eat mostly healthy food
+                 <input name="healthy_food_preference" value="prefers" type="radio"/>
+            </label>
             </div>
-            <button type="button" onclick="handleClick()" class="homepage-container__button">Next</button>
+            <button type="submit" class="homepage-container__button">Next</button>
         </div>
       </div>
+</form>
 </body>
 <script>
-    function handleClick() {
-        window.location.href="/" + Math.floor(Math.random() * 8);
+    function onLoad() {
+        const user_id = Date.now().toString()
+        document.getElementsByName("user_id")[0].value = user_id
     }
 </script>
 </html>

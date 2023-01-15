@@ -6,7 +6,10 @@
     <link rel="stylesheet" type="text/css" href="recipes.css">
     <title>Choose Your recipe</title>
 </head>
-<body>
+<body onload="onLoad()">
+<form action="/add_result" method="POST">
+    <input type="hidden" name="group_id" value="1-explanation"/>
+    <input type="hidden" name="user_id" value=""/>
         <div class="recipe-form__Layout">
             <p class="recipe-form__label">Choose one of the recipes in each row: </p>
             <div class="recipe-form__container">
@@ -18,6 +21,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 147mg of cholesterol and 543 calories.
                     </label>
+                    <input type="radio" name="recipe1" value="unhealthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Classic Macaroni Salad</p>
@@ -27,6 +31,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 8mg of cholesterol and 390 calories.
                     </label>
+                    <input type="radio" name="recipe1" value="healthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -38,6 +43,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 196mg of cholesterol and 1054 calories.
                     </label>
+                    <input type="radio" name="recipe2" value="unhealthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Homemade Black Bean Veggie Burgers</p>
@@ -47,6 +53,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 47mg of cholesterol and 198 calories.
                     </label>
+                    <input type="radio" name="recipe2" value="healthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -58,6 +65,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 180mg of cholesterol and 917 calories.
                     </label>
+                    <input type="radio" name="recipe3" value="unhealthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">No-Mayo Chicken Salad</p>
@@ -67,6 +75,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 7mg of cholesterol and 38 calories.
                     </label>
+                    <input type="radio" name="recipe3" value="healthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -78,6 +87,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 32mg of cholesterol and 295 calories.
                     </label>
+                    <input type="radio" name="recipe4" value="unhealthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Delicious Cinnamon Baked Apples</p>
@@ -87,6 +97,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 2mg of cholesterol and 147 calories.
                     </label>
+                    <input type="radio" name="recipe4" value="healthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -98,6 +109,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 169mg of cholesterol and 395 calories.
                     </label>
+                    <input type="radio" name="recipe5" value="unhealthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Air Fryer French Toast Sticks</p>
@@ -107,6 +119,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 34mg of cholesterol and 48 calories.
                     </label>
+                    <input type="radio" name="recipe5" value="healthy"/>
                 </div>
             </div>
             <div class="recipe-form__container">
@@ -118,6 +131,7 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 39g of sugars and 364 calories.
                     </label>
+                    <input type="radio" name="recipe6" value="unhealthy"/>
                 </div>
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Clean Banana Oat Cookies</p>
@@ -127,9 +141,18 @@
                     <label class="recipe-form__recipe-explanation">
                         This recipe contains 3g of sugars and 55 calories.
                     </label>
+                    <input type="radio" name="recipe6" value="healthy"/>
                 </div>
             </div>
             <button class="recipe-form__button" type="submit">Done</button>
         </div>
+</form>
 </body>
+<script>
+    function onLoad() {
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        document.getElementsByName("user_id")[0].value = urlParams.get('user_id')
+    }
+</script>
 </html>
