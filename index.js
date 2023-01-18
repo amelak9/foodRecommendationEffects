@@ -86,7 +86,7 @@ app.post('/add_result',(req,res)=> {
     }
 
 
-        con.query("INSERT INTO results set ? ",data,
+    connection.query("INSERT INTO results set ? ",data,
             function(err)
             {
 
@@ -109,7 +109,7 @@ app.post('/add_user',(req,res)=> {
         sex: request.sex,
         healthy_food_preference: request.healthy_food_preference
     }
-    con.query("INSERT INTO users set ? ",data,
+    connection.query("INSERT INTO users set ? ",data,
         function(err)
         {
             if (err) {
