@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="93b71143-eb5a-4caf-94a0-b1ec42d370a6" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/DecoyEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/DecoyEffect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/DecoyPositionEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/DecoyPositionEffect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/DecoyPositionExplanation.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/DecoyPositionExplanation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/Explanation.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Explanation.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ExplanationDecoyEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ExplanationDecoyEffect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/ExplanationPositionEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ExplanationPositionEffect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/NoEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/NoEffect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/PositionEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/PositionEffect.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/homepage.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/homepage.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,6 +116,8 @@
       <workItem from="1674041817483" duration="3347000" />
       <workItem from="1674048827653" duration="3436000" />
       <workItem from="1674054137146" duration="52000" />
+      <workItem from="1674054213429" duration="159000" />
+      <workItem from="1674067538205" duration="369000" />
     </task>
     <servers />
   </component>
