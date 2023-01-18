@@ -38,12 +38,5 @@ mode: 'development',
     node: {
         global: true
     },
-    devtool: 'inline-source-map',
-    devServer: {
-      host: 'localhost',
-      port: 8080,
-      historyApiFallback: true,
-      open: true
-  },
  plugins: [htmlPlugin]
 };
