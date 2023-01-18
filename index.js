@@ -19,7 +19,7 @@ con.connect(function(err) {
 });
 
 con.query("CREATE TABLE IF NOT EXISTS users (user_id VARCHAR(200)," +
-    "age NUMBER," +
+    "age INTEGER," +
     "sex VARCHAR(15)," +
     "healthy_food_preference VARCHAR(35))");
 
