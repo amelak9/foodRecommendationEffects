@@ -21,7 +21,7 @@ con.connect(function(err) {
 con.query("CREATE TABLE IF NOT EXISTS users (user_id VARCHAR(200)," +
     "age NUMBER," +
     "sex VARCHAR(15)," +
-    "healthy_food_preference VARCHAR(35) )");
+    "healthy_food_preference VARCHAR(35))");
 
 con.query("CREATE TABLE IF NOT EXISTS results (user_id VARCHAR(200)," +
     "group_id VARCHAR(200)," +
@@ -30,7 +30,7 @@ con.query("CREATE TABLE IF NOT EXISTS results (user_id VARCHAR(200)," +
     "recipe_3 VARCHAR(15)," +
     "recipe_4 VARCHAR(15)," +
     "recipe_5 VARCHAR(15)," +
-    "recipe_6 VARCHAR(15),");
+    "recipe_6 VARCHAR(15)");
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/pages/'));
