@@ -30,7 +30,7 @@ con.query("CREATE TABLE IF NOT EXISTS results (user_id VARCHAR(200)," +
     "recipe_3 VARCHAR(15)," +
     "recipe_4 VARCHAR(15)," +
     "recipe_5 VARCHAR(15)," +
-    "recipe_6 VARCHAR(15)");
+    "recipe_6 VARCHAR(15))");
 
 app.use(bodyParser.json());
 app.use(express.static(__dirname + '/pages/'));
