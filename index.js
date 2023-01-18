@@ -6,7 +6,7 @@ const __dirname = path.resolve();
 const app = express();
 import mysql from "mysql";
 
-var con=mysql.createConnection({
+var con=mysql.createPool({
     host: process.env.DB_HOST,
     user: process.env.DB_USER,
     password: process.env.DB_PASSWORD,
