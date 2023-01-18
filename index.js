@@ -7,10 +7,10 @@ const app = express();
 import mysql from "mysql";
 
 var con=mysql.createConnection({
-    host: "0.0.0.0",
-    user: "root",
-    password: "password",
-    database: "recipes_production"
+    host: process.env.DB_HOST,
+    user: process.env.DB_USER,
+    password: process.env.DB_PASSWORD,
+    database: process.env.DB
 });
 
 con.connect(function(err) {
