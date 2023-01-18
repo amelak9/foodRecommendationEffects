@@ -38,12 +38,12 @@ function handleDisconnect() {
 
 handleDisconnect();
 
-con.query("CREATE TABLE IF NOT EXISTS users (user_id VARCHAR(200)," +
+connection.query("CREATE TABLE IF NOT EXISTS users (user_id VARCHAR(200)," +
     "age INTEGER," +
     "sex VARCHAR(15)," +
     "healthy_food_preference VARCHAR(35))");
 
-con.query("CREATE TABLE IF NOT EXISTS results (user_id VARCHAR(200)," +
+connection.query("CREATE TABLE IF NOT EXISTS results (user_id VARCHAR(200)," +
     "group_id VARCHAR(200)," +
     "recipe_1 VARCHAR(15)," +
     "recipe_2 VARCHAR(15)," +
