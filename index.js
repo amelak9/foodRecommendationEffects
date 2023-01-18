@@ -10,8 +10,7 @@ var con=mysql.createConnection({
     host: "0.0.0.0",
     user: "root",
     password: "password",
-    port: "3306",
-    database: "recipes"
+    database: "recipes-production"
 });
 
 con.connect(function(err) {
