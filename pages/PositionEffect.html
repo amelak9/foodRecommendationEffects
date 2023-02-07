@@ -27,8 +27,9 @@
                     </div>
                     <input type="radio" name="recipe1" value="unhealthy"/>
                 </div>
+                <button class="recipe-form__button" onclick="nextRecipe(0,1)" type="button">Next</button>
             </div>
-            <div class="recipe-form__container">
+            <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Homemade Black Bean Veggie Burgers</p>
                     <div class="recipe-form__recipe">
@@ -43,8 +44,9 @@
                     </div>
                     <input type="radio" name="recipe2" value="unhealthy"/>
                 </div>
+                <button class="recipe-form__button" onclick="nextRecipe(1,2)" type="button">Next</button>
             </div>
-            <div class="recipe-form__container">
+            <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">No-Mayo Chicken Salad</p>
                     <div class="recipe-form__recipe">
@@ -59,8 +61,9 @@
                     </div>
                     <input type="radio" name="recipe3" value="unhealthy"/>
                 </div>
+                <button class="recipe-form__button" onclick="nextRecipe(2,3)" type="button">Next</button>
             </div>
-            <div class="recipe-form__container">
+            <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Delicious Cinnamon Baked Apples</p>
                     <div class="recipe-form__recipe">
@@ -73,11 +76,12 @@
                     <div class="recipe-form__recipe">
                         <div class="apple-donuts"></div>
                     </div>
+                    <input type="radio" name="recipe4" value="unhealthy"/>
                 </div>
-                <input type="radio" name="recipe4" value="unhealthy"/>
+            <button class="recipe-form__button" onclick="nextRecipe(3,4)" type="button">Next</button>
             </div>
-            <div class="recipe-form__container">
-                <div class="recipe-form__recipe-container">
+    <div class="recipe-form__container" style="display: none">
+        <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Air Fryer French Toast Sticks</p>
                     <div class="recipe-form__recipe">
                         <div class="air-fryer-sticks"></div>
@@ -91,9 +95,10 @@
                     </div>
                     <input type="radio" name="recipe5" value="unhealthy"/>
                 </div>
-            </div>
-            <div class="recipe-form__container">
-                <div class="recipe-form__recipe-container">
+        <button class="recipe-form__button" onclick="nextRecipe(4,5)" type="button">Next</button>
+    </div>
+    <div class="recipe-form__container" style="display: none">
+        <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Clean Banana Oat Cookies</p>
                     <div class="recipe-form__recipe">
                         <div class="banana-cookie"></div>
@@ -107,8 +112,8 @@
                     </div>
                     <input type="radio" name="recipe6" value="unhealthy"/>
                 </div>
-            </div>
-            <button class="recipe-form__button" type="submit">Done</button>
+        <button class="recipe-form__button" type="submit">Done</button>
+    </div>
         </div>
 </form>
 </body>
@@ -117,6 +122,20 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         document.getElementsByName("user_id")[0].value = urlParams.get('user_id')
+    }
+
+    function nextRecipe(current, next) {
+        let checked = false
+        document.getElementsByName("recipe" + next).forEach(
+            (c) => {
+                if (c.checked) checked = true;
+            }
+        );
+
+        if (checked) {
+            document.getElementsByClassName("recipe-form__container")[current].style.display = "none";
+            document.getElementsByClassName("recipe-form__container")[next].style.display = "flex";
+        }
     }
 </script>
 </html>

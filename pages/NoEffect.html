@@ -27,8 +27,9 @@
                     </div>
                     <input type="radio" name="recipe1" value="healthy"/>
                 </div>
+                <button class="recipe-form__button" onclick="nextRecipe(0,1)" type="button">Next</button>
             </div>
-            <div class="recipe-form__container">
+        <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Cheeseburger Quesadilla</p>
                     <div class="recipe-form__recipe">
@@ -43,8 +44,9 @@
                     </div>
                     <input type="radio" name="recipe2" value="healthy"/>
                 </div>
-            </div>
-            <div class="recipe-form__container">
+            <button class="recipe-form__button" onclick="nextRecipe(1,2)" type="button">Next</button>
+        </div>
+        <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Baked Buffalo Chicken Mac and Cheese</p>
                     <div class="recipe-form__recipe">
@@ -59,8 +61,9 @@
                     </div>
                     <input type="radio" name="recipe3" value="healthy"/>
                 </div>
-            </div>
-            <div class="recipe-form__container">
+            <button class="recipe-form__button" onclick="nextRecipe(2,3)" type="button">Next</button>
+        </div>
+        <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Baked Apple Cider Donuts</p>
                     <div class="recipe-form__recipe">
@@ -75,8 +78,9 @@
                     </div>
                     <input type="radio" name="recipe4" value="healthy"/>
                 </div>
-            </div>
-            <div class="recipe-form__container">
+            <button class="recipe-form__button" onclick="nextRecipe(3,4)" type="button">Next</button>
+        </div>
+        <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Baked French Toast</p>
                     <div class="recipe-form__recipe">
@@ -91,8 +95,9 @@
                     </div>
                     <input type="radio" name="recipe5" value="healthy"/>
                 </div>
-            </div>
-            <div class="recipe-form__container">
+            <button class="recipe-form__button" onclick="nextRecipe(4,5)" type="button">Next</button>
+        </div>
+        <div class="recipe-form__container" style="display: none">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Chocolate Mint Cookies</p>
                     <div class="recipe-form__recipe">
@@ -107,8 +112,8 @@
                     </div>
                     <input type="radio" name="recipe6" value="healthy"/>
                 </div>
-            </div>
             <button class="recipe-form__button" type="submit">Done</button>
+        </div>
         </div>
 </form>
 </body>
@@ -117,6 +122,20 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         document.getElementsByName("user_id")[0].value = urlParams.get('user_id')
+    }
+
+    function nextRecipe(current, next) {
+        let checked = false
+        document.getElementsByName("recipe" + next).forEach(
+            (c) => {
+                if (c.checked) checked = true;
+            }
+        );
+
+        if (checked) {
+            document.getElementsByClassName("recipe-form__container")[current].style.display = "none";
+            document.getElementsByClassName("recipe-form__container")[next].style.display = "flex";
+        }
     }
 </script>
 </html>
