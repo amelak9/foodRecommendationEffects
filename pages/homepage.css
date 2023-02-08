@@ -6,6 +6,7 @@
     border-radius: 5px;
     width: 600px;
     margin: 100px auto;
+    font-size: 18px;
 }
 
 .homepage-container__object {
@@ -35,3 +36,7 @@
     border: 1px solid cornflowerblue;
 }
 
+.homepage-container__link {
+    display: block;
+    text-align: center;
+}
