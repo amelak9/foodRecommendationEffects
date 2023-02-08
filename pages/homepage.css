@@ -20,6 +20,7 @@
     font-size: 18px;
     padding: 8px;
     border: 1px solid cornflowerblue;
+    cursor: pointer;
 }
 
 .homepage-container__label {

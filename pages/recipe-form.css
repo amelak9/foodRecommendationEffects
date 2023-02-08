@@ -54,6 +54,7 @@
     font-size: 18px;
     padding: 8px;
     border: 1px solid cornflowerblue;
+    cursor: pointer;
 }
 
 .recipe-form__recipe-container-decoy {
