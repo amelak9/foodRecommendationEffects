@@ -12,6 +12,11 @@
     <input type="hidden" name="user_id" value=""/>
         <div class="recipe-form__Layout">
             <p class="recipe-form__label">Choose exactly one of the following recipes: </p>
+            <div class="recipe-form__number">
+                <p id="recipe_num">
+                1/6
+                </p>
+            </div>
             <div class="recipe-form__container">
                 <div class="recipe-form__recipe-container">
                     <p class="recipe-form__recipe-title">Classic Macaroni Salad</p>
@@ -135,6 +140,7 @@
         if (checked) {
             document.getElementsByClassName("recipe-form__container")[current].style.display = "none";
             document.getElementsByClassName("recipe-form__container")[next].style.display = "flex";
+            document.getElementById("recipe_num").innerHTML = (next + 1).toString() + "/6"
         }
     }
 </script>
