@@ -60,7 +60,7 @@ app.use(
     })
 )
 
-app.get('/',function(req,res) { res.sendFile(__dirname + '/pages/homepage.html'); });
+app.get('/',function(req,res) { res.sendFile(__dirname + '/pages/tugraz.html'); });
 app.get('/0',function(req,res) { res.sendFile(__dirname + '/pages/NoEffect.html'); });
 app.get('/1',function(req,res) { res.sendFile(__dirname + '/pages/Explanation.html'); });
 app.get('/2',function(req,res) { res.sendFile(__dirname + '/pages/PositionEffect.html'); });
@@ -70,6 +70,7 @@ app.get('/5',function(req,res) { res.sendFile(__dirname + '/pages/DecoyPositionE
 app.get('/6',function(req,res) { res.sendFile(__dirname + '/pages/ExplanationDecoyEffect.html'); });
 app.get('/7',function(req,res) { res.sendFile(__dirname + '/pages/ExplanationPositionEffect.html'); });
 app.get('/8',function(req,res) { res.sendFile(__dirname + '/pages/Finished.html'); });
+app.get('/userData',function(req,res) { res.sendFile(__dirname + '/pages/homepage.html'); });
 
 app.post('/add_result',(req,res)=> {
 
@@ -121,6 +122,10 @@ app.post('/add_user',(req,res)=> {
                 console.log("User Added Successfully!!");
             }
         });
+});
+
+app.get('/userData',(req,res)=> {
+ res.status(200).redirect("/userData");
 });
 
 app.listen(process.env.PORT || 8080, function(){
