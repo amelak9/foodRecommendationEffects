@@ -11,7 +11,12 @@
     <input type="hidden" name="group_id" value="6-explanation-decoy"/>
     <input type="hidden" name="user_id" value=""/>
         <div class="recipe-form__Layout">
-            <p class="recipe-form__label">Choose one of the recipes in each row: </p>
+            <p class="recipe-form__label">Choose exactly one of the following recipes: </p>
+            <div class="recipe-form__number">
+                <p id="recipe_num">
+                    1/6
+                </p>
+            </div>
             <div class="recipe-form__container">
                 <div class="recipe-form__recipe-container-decoy">
                     <p class="recipe-form__recipe-title">Fried Mac and Cheese Balls</p>
@@ -230,6 +235,7 @@
         if (checked) {
             document.getElementsByClassName("recipe-form__container")[current].style.display = "none";
             document.getElementsByClassName("recipe-form__container")[next].style.display = "flex";
+            document.getElementById("recipe_num").innerHTML = (next + 1).toString() + "/6"
         }
     }
 </script>
