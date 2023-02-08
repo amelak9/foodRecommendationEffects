@@ -13,6 +13,11 @@
     margin-bottom: 8px;
 }
 
+.recipe-form__number {
+    font-weight: 700;
+    font-family: pt-serif, serif;
+}
+
 .recipe-form__recipe-title {
     font-size: 16px;
     font-style: italic;
