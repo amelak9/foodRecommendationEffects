@@ -5,14 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="93b71143-eb5a-4caf-94a0-b1ec42d370a6" name="Changes" comment="ui changes">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/cad79e69-bc68-4341-bbaa-035cb959c4b8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/cad79e69-bc68-4341-bbaa-035cb959c4b8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/DecoyPositionExplanation.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/DecoyPositionExplanation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/Explanation.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/Explanation.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ExplanationDecoyEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ExplanationDecoyEffect.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/ExplanationPositionEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/ExplanationPositionEffect.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/homepage.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/homepage.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/recipe-form.css" beforeDir="false" afterPath="$PROJECT_DIR$/pages/recipe-form.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pages/tugraz.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/tugraz.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pages/DecoyEffect.html" beforeDir="false" afterPath="$PROJECT_DIR$/pages/DecoyEffect.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +117,8 @@
       <workItem from="1674067538205" duration="546000" />
       <workItem from="1674511410513" duration="7095000" />
       <workItem from="1675779845568" duration="14422000" />
-      <workItem from="1676055141537" duration="2095000" />
+      <workItem from="1676055141537" duration="2588000" />
+      <workItem from="1676390178289" duration="258000" />
     </task>
     <task id="LOCAL-00001" summary="ui changes">
       <created>1675868329409</created>
@@ -157,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676040621721</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="ui changes">
+      <created>1676057301098</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1676057301098</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
