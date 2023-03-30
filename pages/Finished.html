@@ -6,10 +6,59 @@
     <link rel="stylesheet" type="text/css" href="finished.css">
 </head>
 <body>
+  <form action="/add_student_details" method="POST" id="form">
+  <input type="hidden" name="user_id" value=""/>
 <div class="finished-container">
   <p class="finished-container__label">Thank you for participating!</p>
 </div>
+<div class="finished-container__additional">
+  <label>How important was the aspect of healthiness for your final choice
+  </label>
+  <label> 1
+  <input type="radio" name="importance" value="1" required/>
+  </label>
+  <label>2
+  <input type="radio" name="importance" value="2"/>
+  </label>
+  <label>3
+  <input type="radio" name="importance" value="3"/>
+  </label>
+  <label>4
+  <input type="radio" name="importance" value="4"/>
+  </label>
+  <label>5
+  <input type="radio" name="importance" value="5"/>
+  </label>
+  <label>How well did the food recommendations include food items you like
+  </label>
+  <label> 1
+  <input type="radio" name="likeness" value="1" required/>
+  </label>
+  <label>2
+  <input type="radio" name="likeness" value="2"/>
+  </label>
+  <label>3
+  <input type="radio" name="likeness" value="3"/>
+  </label>
+  <label>4
+  <input type="radio" name="likeness" value="4"/>
+  </label>
+  <label>5
+  <input type="radio" name="likeness" value="5"/>
+  </label>
+</div>
+<input type="email" name="email" required/>
 
 </div>
+</form>
 </body>
+<script>
+  let arrayRandom = [0,1,2,3,4,5];
+  let currentPage = 1;
+  function onLoad() {
+      const queryString = window.location.search;
+      const urlParams = new URLSearchParams(queryString);
+      document.getElementsByName("user_id")[0].value = urlParams.get('user_id')
+  }
+</script>
 </html>

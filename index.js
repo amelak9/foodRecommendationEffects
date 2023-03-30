@@ -43,6 +43,12 @@ connection.query("CREATE TABLE IF NOT EXISTS users (user_id VARCHAR(200)," +
     "sex VARCHAR(15)," +
     "healthy_food_preference VARCHAR(35))");
 
+connection.query("CREATE TABLE IF NOT EXISTS student_details (user_id VARCHAR(200)," +
+"importance VARCHAR(15)," +
+"likeness VARCHAR(15)," +
+"email VARCHAR(55))");
+
+
 connection.query("CREATE TABLE IF NOT EXISTS results (user_id VARCHAR(200)," +
     "group_id VARCHAR(200)," +
     "recipe_1 VARCHAR(15)," +
@@ -95,7 +101,7 @@ app.post('/add_result',(req,res)=> {
                     console.log("Error inserting : %s ",err);
                 }
                 else {
-                    res.status(200).redirect("/8");
+                    res.status(200).redirect("/8" + "?user_id=" + data.user_id);
                     console.log("Result Added Successfully!!");
                 }
             });
@@ -119,6 +125,29 @@ app.post('/add_user',(req,res)=> {
             }
             else {
                 res.status(200).redirect("/" + Math.floor(Math.random() * 8) + "?user_id=" + data.user_id)
+                console.log("User Added Successfully!!");
+            }
+        });
+});
+
+app.post('/add_student_details',(req,res)=> {
+
+    const request = req.body;
+    const data = {
+        user_id: request.user_id,
+        importance: request.importance,
+        likeness: request.likeness,
+        email: request.email
+    }
+    connection.query("INSERT INTO student_details set ? ",data,
+        function(err)
+        {
+            if (err) {
+                res.status(400).json('Sorry!!Unable To Add');
+                console.log("Error inserting : %s ",err );
+            }
+            else {
+                res.status(200).redirect("/")
                 console.log("User Added Successfully!!");
             }
         });
