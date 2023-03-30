@@ -6,9 +6,33 @@
     border-radius: 5px;
     width: 600px;
     margin: 100px auto;
+    font-size: 18px;
+}
+
+.finished-container__button {
+    background: cornflowerblue;
+    border-radius: 5px;
+    margin-top: 32px;
+    font-size: 18px;
+    padding: 8px;
+    border: 1px solid cornflowerblue;
+    cursor: pointer;
 }
 
 .finished-container__label {
     font-weight: bold;
     font-size: 16px;
+    margin-bottom: 8px;
+    margin-right: 8px;
+}
+
+.finished-container__object {
+    margin-bottom: 16px;
+}
+
+.finished-container__input {
+    height: 32px;
+    border-radius: 5px;
+    width: 50%;
+    border: 1px solid cornflowerblue;
 }
