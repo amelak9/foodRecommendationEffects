@@ -76,7 +76,8 @@ app.get('/5',function(req,res) { res.sendFile(__dirname + '/pages/DecoyPositionE
 app.get('/6',function(req,res) { res.sendFile(__dirname + '/pages/ExplanationDecoyEffect.html'); });
 app.get('/7',function(req,res) { res.sendFile(__dirname + '/pages/ExplanationPositionEffect.html'); });
 app.get('/8',function(req,res) { res.sendFile(__dirname + '/pages/Finished.html'); });
-app.get('/userData',function(req,res) { res.sendFile(__dirname + '/pages/thanks.html'); });
+app.get('/9',function(req,res) { res.sendFile(__dirname + '/pages/thanks.html'); });
+app.get('/userData',function(req,res) { res.sendFile(__dirname + '/pages/homepage.html'); });
 
 app.post('/add_result',(req,res)=> {
 
@@ -147,7 +148,7 @@ app.post('/add_student_details',(req,res)=> {
                 console.log("Error inserting : %s ",err );
             }
             else {
-                res.status(200).redirect("/")
+                res.status(200).redirect("/9")
                 console.log("User Added Successfully!!");
             }
         });
