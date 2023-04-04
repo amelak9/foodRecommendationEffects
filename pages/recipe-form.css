@@ -78,3 +78,10 @@
     margin-right: 16px;
     font-weight: 700;
 }
+
+.recipe-form__images {
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
