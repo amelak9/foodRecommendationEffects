@@ -127,7 +127,6 @@ app.post('/add_user',(req,res)=> {
                 console.log("Error inserting : %s ",err );
             }
             else {
-                let query = "SELECT COUNT(id) AS id_count FROM publishers WHERE id = 0";
                 res.status(200).redirect("/" + Math.floor(Math.random() * 10 + "?user_id=" + data.user_id));
                 console.log("User Added Successfully!!");
             }
