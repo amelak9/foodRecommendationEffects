@@ -2,10 +2,10 @@
     margin: 90px auto;
     padding: 16px 50px;
     border-radius: 5px;
-    text-align: center;
     max-width: 1200px;
     border: 1px solid cornflowerblue;
     background: whitesmoke;
+    text-align: -webkit-center;
 }
 
 .recipe-form__label {
@@ -69,8 +69,6 @@
     display: flex;
     flex-direction: column;
     flex: 1 0 50%;
-    justify-content: center;
-    text-align: center;
 }
 
 .recipe-form__recipe-explanation {
